@@ -2,11 +2,11 @@
 const mongodb = require('mongodb')
 
 const MongoCilent = mongodb.MongoClient
-const Mongo_URL = process.env.mondoDB_url
+const { mondoDB_url } = require('./config')
 
 module.exports = (async ()=>{
 
-    const client =await MongoCilent.connect(Mongo_URL,{
+    const client =await MongoCilent.connect(mondoDB_url,{
         useNewUrlParser:true,
         useUnifiedTopology:true
       
